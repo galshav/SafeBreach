@@ -10,7 +10,7 @@ def main():
     # Build the given solution according to the required method.
     # this can be controlled using env variable (InstallByRegistryModify or InstallByWinAPI)
     os.environ["InstallByWinAPI"] = "1"
-    #os.environ["InstallByWinAPI"] = "1"
+    #os.environ["InstallByRegistryModify"] = "1"
     msbuild = MSBuild('C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Msbuild\\Current\\Bin\\amd64\\MSBuild.exe')
     msbuild.compile()
 
