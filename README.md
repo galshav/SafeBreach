@@ -33,3 +33,7 @@ Anyway, We must enable it, since it disabled by default.
 The DLL which deployed to the %systemroot%/System32 directory must expose some functions in order the method to work. specifically it must export (by .def file or __declspec(dllexport)) the [InitializePrintMonitor2](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintmonitor2)
 I got 127 error code when i didn't know about the functions i must implement. which is error with the following description "The specified procedure could not be found".
 Although, DLLEntry did get call as from the procmon log, the spoolsrv.exe terminated it quickly.
+
+## Notes:
+After noticed my own empty dll got 127 error code, i found the blog from stmxcsr, i copied the dll impl from there
+which suffered from the so called "include-hell", I just wanted it to work so didn't spend a lot of time making things pretty, a lot of defines just got copy from the windows spoolsrv header file.

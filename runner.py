@@ -12,6 +12,10 @@ def main():
     os.environ["InstallByWinAPI"] = "1"
     #os.environ["InstallByWinAPI"] = "1"
     msbuild = MSBuild('C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Msbuild\\Current\\Bin\\amd64\\MSBuild.exe')
+    msbuild.compile()
+
+    # run
+    subprocess.call(["PortMonitors.exe", "1"])
 
 
 if "__main__" == __name__:
